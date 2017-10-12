@@ -27,7 +27,7 @@ class PlasticityServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $this->app['plasticity'] = $this->app->share(function($app)
+        $this->app->singleton('plasticity', function()
         {
             return new Plasticity;
         });
